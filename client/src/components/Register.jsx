@@ -3,6 +3,8 @@ import { useState, useContext } from 'react';
 import { Navigate } from 'react-router-dom';
 import axios from "../Axios/axios.js"
 import TokenContext from '../context/TokenContext.js';
+import img1 from './img1.jpg'
+import Footer from './footer/Footer.jsx';
 function Register() {
     const [formData, setFormData] = useState({})
     const {userToken, tokenDispatch, userDispatch } = useContext(TokenContext);
@@ -24,13 +26,14 @@ function Register() {
         }
     }
     return (
+        <>
         <div>
             {userToken && <Navigate to="/" />}
             <section className="register-container">
                 <div className="container px-6 py-12 h-full">
                     <div className="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
-                        <div className="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
-                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" className="w-full" alt="Phone" />
+                        <div className="md:w-8/12 lg:w-6/12 mb-12 md:mb-0 ">
+                            <img src={img1} className="w-full rounded-2xl bg " alt="Phone" />
                         </div>
                         <div className="md:w-8/12 lg:w-5/12 lg:ml-20">
                             <form method='post' onSubmit={handleSubmit}>
@@ -94,6 +97,11 @@ function Register() {
             </section>
 
         </div>
+       <div className='align-center text-center'> ✌️✌️</div>
+        <div className="footer ended ">
+            <Footer />
+        </div>
+        </>
     );
 }
 

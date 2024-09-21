@@ -21,7 +21,7 @@ const forgotPassword = async (req, res) => {
     await user.save();
     
     //Send email with reset token
-    const resetUrl = `http://localhost:8001/resetPassword?token=${resetToken}`;
+    const resetUrl = `https://mern-todo-seven-psi.vercel.app/resetPassword?token=${resetToken}`;
     var transporter = createTransport({
         service: 'gmail',
         host: 'smtp.gmail.com',
